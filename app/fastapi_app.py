@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
 from celery_app import celery_main,get_task_result
 
 fastapi_app = FastAPI()
