@@ -26,7 +26,8 @@ cd Crawling-GlassDollar
 
 # For building the first time
 # Build docker containers
-docker compose up --build
+docker compose up --build 
+#or docker-compose up --build
 
 #For the rest of the runs
 #docker compose up
@@ -37,10 +38,11 @@ docker compose up --build
 - After the project is built and run successfully on docker. You can use the following endpoint to get your data.<br>
 http://127.0.0.1:8000/enterprises/
 
-- After you send the request, the page will be redirected to a new page.<br>
+- After the request is sent, the response will provide a new endpoint to see the results of the async process.<br>
 http://127.0.0.1:8000/requests/{task_id} <br>
 task_id will be assigned by service.
 
-- Until the process is done and the results are ready, the page will display a "Task in progress" message. After the process is done, you can see the results by refreshing the page.
-- Celery tasks can be monitored on with Flower<br>
+- The page will display a "Task in progress" message until the process is done and the results are ready. After the process finishes, you can see the results by refreshing the page.
+  
+- Celery tasks can be monitored with Flower<br>
 http://127.0.0.1:5556/
